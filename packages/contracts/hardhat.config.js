@@ -10,7 +10,7 @@ if (process.env.DEPLOYER_KEY && process.env.OWNER_KEY) {
   real_accounts = [process.env.OWNER_KEY, process.env.DEPLOYER_KEY];
 }
 const gatewayurl =
-  'https://offchain-resolver-example.uc.r.appspot.com/{sender}/{data}.json';
+  'https://ens.like.co/{sender}/{data}.json';
 
 let devgatewayurl = 'http://localhost:8080/{sender}/{data}.json';
 if (process.env.REMOTE_GATEWAY) {
