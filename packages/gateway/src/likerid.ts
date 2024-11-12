@@ -1,6 +1,6 @@
 import axios, { AxiosError } from 'axios';
 import { Database } from './server';
-import { ETH_COIN_TYPE, COSMOS_COIN_TYPE, EVM_COIN_TYPE_THERSOLD } from './utils';
+import { ETH_COIN_TYPE, COSMOS_COIN_TYPE, EVM_COIN_TYPE_THRESHOLD } from './utils';
 
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 const EMPTY_CONTENT_HASH = '0x';
@@ -15,7 +15,7 @@ const TEXT_KEY_TO_FIELD_NAME: { [key: string]: string } = {
 };
 
 function coinTypeToFieldName(coinType: number): string | null {
-  if (coinType === ETH_COIN_TYPE || coinType > EVM_COIN_TYPE_THERSOLD) {
+  if (coinType === ETH_COIN_TYPE || coinType > EVM_COIN_TYPE_THRESHOLD) {
     return 'evmWallet';
   }
   if (coinType === COSMOS_COIN_TYPE) {
